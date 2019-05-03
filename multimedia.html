@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>MySite</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Here is a precise description of my awesome webpage.">
+    <link href="style.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+
+<!-- Inc -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+
+<!-- Header -->
+<nav class="navbar navbar-light bg-dark pt-3 pb-3"><div id="header" class="container d-flex justify-content-around"></div></nav>
+
+<!-- Page -->
+<div id="page"><a target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/"><i class="fab fa-youtube text-danger" style="font-size: 100px; margin-left: 47%; margin-top: 300px;"></i></a></div>
+
+<!-- Script -->
+<script src="app/data.js"></script>
+<script src="app/controller.js"></script>
+<script>
+// Make Header
+HeaderBuilder(data.header);
+</script>
