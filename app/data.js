@@ -9,7 +9,12 @@ var data = {
 
 	home: {},
 	news: {},
-	galery: {},
+	galery: {
+		img : 6,
+		imgName : "cat",
+		imgExtension : ".jpg",
+		rowLength : 2
+	},
 	documents: {},
 	multimedia: {}
 
