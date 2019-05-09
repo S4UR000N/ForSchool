@@ -11,11 +11,11 @@ var $nav = $(".nav").outerHeight();
 var header = document.getElementById("header");
 
 /* Header Builder */
-function HeaderBuilder(data = false) {
-	if(data) {
+function HeaderBuilder(obj = false) {
+	if(obj) {
 		var output = "";
-		for(var key in data) {
-			output += "<a href='"+ data[key]+ "'"+ "><button class='btn btn-primary'>"+ key+ "</button></a>";
+		for(var key in obj) {
+			output += "<a href='"+ obj[key]+ "'"+ "><button class='btn btn-white text-dark'>"+ key+ "</button></a>";
 		}
 		return header.innerHTML = output;
 	}
@@ -23,19 +23,19 @@ function HeaderBuilder(data = false) {
 }
 
 /* Page Builders */
-function HomeBuilder(data = false) { console.log(data); }
-function NewsBuilder(data = false) { console.log(data); }
-function GaleryBuilder(data = false) {
+function HomeBuilder(obj = false) { console.log(obj); }
+function NewsBuilder(obj = false) { console.log(obj); }
+function GaleryBuilder(obj = false) {
 	var output = document.createElement("div");
 	output.className = "container-fluid";
-	for(var i = data.img; i > 0; i -= data.rowLength) {
+	for(var i = obj.img; i > 0; i -= obj.rowLength) {
 		var d = document.createElement("div");
 		d.className = "row d-flex justify-content-around";
-		for(var j = 0;  j < data.rowLength; j++) {
+		for(var j = 0;  j < obj.rowLength; j++) {
 			var a = document.createElement("a");
 			var img = document.createElement("img");
-			a.href = "resources/assets/images/"+ data.imgName+ (i-j)+ data.imgExtension;
-			img.src = "resources/assets/images/"+ data.imgName+ (i-j)+ data.imgExtension;
+			a.href = "resources/assets/images/"+ obj.imgName+ (i-j)+ obj.imgExtension;
+			img.src = "resources/assets/images/"+ obj.imgName+ (i-j)+ obj.imgExtension;
 			img.style = "padding-top: 25px;"
 			a.setAttribute("target", "_blank");
 			a.setAttribute("rel", "noopener noreferrer");
@@ -46,5 +46,15 @@ function GaleryBuilder(data = false) {
 	}
 	$("#page").html(output);
 }
-function DocumentsBuilder(data = false) { console.log(data); }
-function MultimediaBuilder(data = false) { console.log(data); }
+function DocumentsBuilder(obj = false) { console.log(obj); }
+function MultimediaBuilder(obj = false) {
+	var i = 0;
+	var output = "";
+	for(key in obj.data) {
+		if(i == 0 || (i/obj.rowLength) >= 1) { output += "<tr>"; }
+		output += "<td><a href='"+ key+ "' target='_blank' rel='noopener noreferrer'><i class='"+ obj.data[key]+ "'</i></a></td>";
+		i++;
+		if(i == obj.rowLength) { output += "</tr>"; i = 0; }
+	}
+	$("#page tbody").html(output);
+}

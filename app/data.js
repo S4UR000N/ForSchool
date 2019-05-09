@@ -16,6 +16,15 @@ var data = {
 		rowLength : 2
 	},
 	documents: {},
-	multimedia: {}
-
+	multimedia: {
+			data : {
+				"https://www.facebook.com/" : "fab fa-facebook-square",
+				"https://www.youtube.com/" : "fab fa-youtube text-danger",
+				"https://twitter.com/" : "fab fa-twitter",
+				"https://www.pinterest.com/" : "fab fa-pinterest text-danger",
+				"https://www.linkedin.com/" : "fab fa-linkedin",
+				"https://plus.google.com/" : "fab fa-google-plus text-danger"
+			},
+			rowLength : 3
+	}
 }

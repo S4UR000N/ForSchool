@@ -19,15 +19,29 @@
 
 
 <!-- Header -->
-<nav class="navbar navbar-light bg-dark pt-3 pb-3"><div id="header" class="container d-flex justify-content-around"></div></nav>
+<nav class="navbar navbar-light pt-3 pb-3" style="background-color: #0099CC;"><div id="header" class="container d-flex justify-content-around"></div></nav>
 
 <!-- Page -->
-<div id="page"><a target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/"><i class="fab fa-youtube text-danger" style="font-size: 100px; margin-left: 47%; margin-top: 300px;"></i></a></div>
+<div id="page">
+ <table class="table table-bordered">
+  <tbody>
 
+  </tbody>
+ </table>
+</div>
 <!-- Script -->
 <script src="app/data.js"></script>
 <script src="app/controller.js"></script>
 <script>
 // Make Header
 HeaderBuilder(data.header);
+
+// Build Content
+MultimediaBuilder(data.multimedia);
 </script>
+
+<style>
+.table { background-color: #2E2E2E;}
+.table td { text-align: center; }
+i { font-size: 100px; }
+</style>
