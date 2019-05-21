@@ -1,21 +1,19 @@
 var data = {
 	header: {
 		"Home" : "index.html",
-		"News" : "news.html",
+		"Test" : "test.html",
 		"Galery" : "galery.html",
-		"Documents" : "documents.html",
 		"Multimedia" : "multimedia.html"
 	},
 
 	home: {},
-	news: {},
+	test: {},
 	galery: {
 		img : 6,
 		imgName : "cat",
 		imgExtension : ".jpg",
 		rowLength : 2
 	},
-	documents: {},
 	multimedia: {
 			data : {
 				"https://www.facebook.com/" : "fab fa-facebook-square",

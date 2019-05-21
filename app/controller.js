@@ -24,7 +24,7 @@ function HeaderBuilder(obj = false) {
 
 /* Page Builders */
 function HomeBuilder(obj = false) { console.log(obj); }
-function NewsBuilder(obj = false) { console.log(obj); }
+function TestBuilder(obj = false) { console.log(obj); }
 function GaleryBuilder(obj = false) {
 	var output = document.createElement("div");
 	output.className = "container-fluid";
@@ -46,7 +46,6 @@ function GaleryBuilder(obj = false) {
 	}
 	$("#page").html(output);
 }
-function DocumentsBuilder(obj = false) { console.log(obj); }
 function MultimediaBuilder(obj = false) {
 	var i = 0;
 	var output = "";
