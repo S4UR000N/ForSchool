@@ -23,7 +23,18 @@ function HeaderBuilder(obj = false) {
 }
 
 /* Page Builders */
-function HomeBuilder(obj = false) { console.log(obj); }
+function HomeBuilder(obj = false) {
+	// Windows width & height
+	var $window_width = $(window).width();
+	var $window_height = $(window).height();
+
+	// Header's height
+	var $header_height = $("#nav").outerHeight();
+
+	// #read_create_delete's height
+	$img_height = $window_height - $header_height;
+	$("#coverimg").css({ "height": $img_height });
+}
 function TestBuilder(obj = false) { console.log(obj); }
 function GaleryBuilder(obj = false) {
 	var output = document.createElement("div");

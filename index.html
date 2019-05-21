@@ -19,10 +19,10 @@
 
 
 <!-- Header -->
-<nav class="navbar navbar-light pt-3 pb-3" style="background-color: #0099CC;"><div id="header" class="container d-flex justify-content-around"></div></nav>
+<nav id="nav" class="navbar navbar-light pt-3 pb-3" style="background-color: #0099CC;"><div id="header" class="container d-flex justify-content-around"></div></nav>
 
 <!-- Page -->
-<div id="page"><img src="resources/assets/images/world.jpg" style="display: block; width: 100%;"/></div>
+<div id="page"><img id="coverimg" src="resources/assets/images/world.jpg" style="width: 100%;"/></div>
 
 <!-- Footer -->
 
@@ -38,5 +38,6 @@
 HeaderBuilder(data.header);
 
 // Page Body
-
+HomeBuilder();
+$(window).resize(function() { HomeBuilder(); });
 </script>
