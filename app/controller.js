@@ -31,11 +31,25 @@ function HomeBuilder(obj = false) {
 	// Header's height
 	var $header_height = $("#nav").outerHeight();
 
-	// #read_create_delete's height
+	// #coverimg height
 	$img_height = $window_height - $header_height;
 	$("#coverimg").css({ "height": $img_height });
 }
-function TestBuilder(obj = false) { console.log(obj); }
+function TestBuilder(obj = false) {
+	// Windows width & height
+	var $window_width = $(window).width();
+	var $window_height = $(window).height();
+
+	// Header's height
+	var $header_height = $("#nav").outerHeight();
+
+	// .box
+	$box = $(".box");
+	$boxWidth = $box.width();
+	$boxHeight = $box.height();
+	$box.html($boxWidth+ "x"+ $boxHeight);
+	$box.css({});
+}
 function GaleryBuilder(obj = false) {
 	var output = document.createElement("div");
 	output.className = "container-fluid";

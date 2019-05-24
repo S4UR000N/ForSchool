@@ -22,7 +22,13 @@
 <nav id="nav" class="navbar navbar-light pt-3 pb-3" style="background-color: #0099CC;"><div id="header" class="container d-flex justify-content-around"></div></nav>
 
 <!-- Page -->
-<div id="page"></div>
+<div id="page">
+ <table>
+  <tr>
+   <td><div class="box"></div></td>
+   <td><div class="box"></div></td>
+   <td><div class="box"></div></td>
+</div>
 
 <!-- Script -->
 <script src="app/data.js"></script>
@@ -30,4 +36,23 @@
 <script>
 // Make Header
 HeaderBuilder(data.header);
+
+// Test Body
+TestBuilder();
+$(window).resize(function() { TestBuilder(); });
 </script>
+
+<style>
+.box {
+  width: 400px;
+  height: 200px;
+
+  font-size: 20px;
+  text-align: center;
+  line-height: 200px;
+
+  color: white;
+  background-color: red;
+
+  border: 2px solid black;
+}
