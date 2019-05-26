@@ -25,9 +25,9 @@
 <div id="page">
  <table>
   <tr>
-   <td><div class="box"></div></td>
-   <td><div class="box"></div></td>
-   <td><div class="box"></div></td>
+   <td><div class="box"><div style="position: relative; top: 50%;"></div></div></td>
+   <td><div class="box"><div style="position: relative; top: 50%;"></div></div></td>
+   <td><div class="box"><div style="position: relative; top: 50%;"></div></div></td>
 </div>
 
 <!-- Script -->
@@ -38,8 +38,14 @@
 HeaderBuilder(data.header);
 
 // Test Body
-TestBuilder();
-$(window).resize(function() { TestBuilder(); });
+var box = {};
+$(document).ready(function() {
+  box.width = $('.box').width();
+  box.height = $('.box').height();
+  console.log(box);
+  TestBuilder(box);
+});
+$(window).resize(function() { TestBuilder(box); });
 </script>
 
 <style>
@@ -47,12 +53,13 @@ $(window).resize(function() { TestBuilder(); });
   width: 400px;
   height: 200px;
 
-  font-size: 20px;
+  font-size: 16px;
   text-align: center;
-  line-height: 200px;
 
   color: white;
   background-color: red;
 
   border: 2px solid black;
+
+  box-sizing: border-box;
 }

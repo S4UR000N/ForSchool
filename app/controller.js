@@ -44,11 +44,22 @@ function TestBuilder(obj = false) {
 	var $header_height = $("#nav").outerHeight();
 
 	// .box
-	$box = $(".box");
-	$boxWidth = $box.width();
-	$boxHeight = $box.height();
-	$box.html($boxWidth+ "x"+ $boxHeight);
-	$box.css({});
+	var $box = $('.box');
+	var $boxWidth = $box.width();
+	var $boxHeight = $box.height();
+
+	var xProportion = (($window_width - ($boxWidth * $box.length)) / $box.length);
+	var yProportion = (($boxWidth / $boxHeight) * xProportion);
+
+	console.log(xProportion);
+	var $newBoxWidth = xProportion + $boxWidth;
+	var $newBoxHeight = yProportion + $boxHeight;
+
+	$box.css({ "width" : $newBoxWidth, /*"height" : $newBoxHeight*/ });
+	$('.box div').html((Math.round($newBoxWidth * 100) / 100)+ " X "+ (Math.round($newBoxHeight * 100) / 100));
+	console.log("");
+	console.log(obj.width+ " X "+ obj.height);
+	console.log($newBoxWidth+ " X "+ $newBoxHeight);
 }
 function GaleryBuilder(obj = false) {
 	var output = document.createElement("div");
