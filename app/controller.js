@@ -49,16 +49,18 @@ function TestBuilder(obj = false) {
 	var $boxHeight = $box.height();
 
 	var xProportion = (($window_width - ($boxWidth * $box.length)) / $box.length);
-	var yProportion = (($boxWidth / $boxHeight) * xProportion);
+	var yProportion = (($boxHeight / $boxWidth) * xProportion);
 
-	console.log(xProportion);
 	var $newBoxWidth = xProportion + $boxWidth;
 	var $newBoxHeight = yProportion + $boxHeight;
 
-	$box.css({ "width" : $newBoxWidth, /*"height" : $newBoxHeight*/ });
+	$box.css({ "width" : $newBoxWidth, "height" : $newBoxHeight });
 	$('.box div').html((Math.round($newBoxWidth * 100) / 100)+ " X "+ (Math.round($newBoxHeight * 100) / 100));
+
 	console.log("");
 	console.log(obj.width+ " X "+ obj.height);
+	console.log("X proportion:"); console.log(xProportion);
+	console.log("Y proportion:"); console.log(yProportion);
 	console.log($newBoxWidth+ " X "+ $newBoxHeight);
 }
 function GaleryBuilder(obj = false) {
