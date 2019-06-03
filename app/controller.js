@@ -48,18 +48,18 @@ function TestBuilder(obj = false) {
 	var $boxWidth = $box.width();
 	var $boxHeight = $box.height();
 
-	var xProportion = (($window_width - ($boxWidth * $box.length)) / $box.length);
-	var yProportion = (($boxHeight / $boxWidth) * xProportion);
+	var toXAddition = (($window_width - ($boxWidth * $box.length)) / $box.length);
+	var yProportion = (obj.height/obj.width);
 
-	var $newBoxWidth = xProportion + $boxWidth;
-	var $newBoxHeight = yProportion + $boxHeight;
+	var $newBoxWidth = $boxWidth + toXAddition;
+	var $newBoxHeight = $newBoxWidth * yProportion;
 
 	$box.css({ "width" : $newBoxWidth, "height" : $newBoxHeight });
 	$('.box div').html((Math.round($newBoxWidth * 100) / 100)+ " X "+ (Math.round($newBoxHeight * 100) / 100));
 
 	console.log("");
 	console.log(obj.width+ " X "+ obj.height);
-	console.log("X proportion:"); console.log(xProportion);
+	console.log("X proportion:"); console.log(toXAddition);
 	console.log("Y proportion:"); console.log(yProportion);
 	console.log($newBoxWidth+ " X "+ $newBoxHeight);
 }
